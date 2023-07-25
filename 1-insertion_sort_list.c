@@ -11,6 +11,13 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *node_1, *node_2, *ptr;
 
+	if (list == NULL || *list == NULL)
+		return;
+
+	if ((*list)->next == NULL)
+		return;
+
+
 	ptr = (*list)->next;
 	node_2 = ptr;
 	node_1 = ptr->prev;

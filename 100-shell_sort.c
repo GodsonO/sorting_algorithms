@@ -10,7 +10,7 @@ void shell_sort(int *array, size_t size)
 	int temp;
 	unsigned int k = 1, i, j, select;
 
-	if (size < 2)
+	if (array == NULL || size < 2)
 		return;
 	while (k < size)
 		k = k * 3 + 1;
@@ -25,11 +25,11 @@ void shell_sort(int *array, size_t size)
 				if (array[j] < array[select])
 				{
 					select = j;
-					temp = array[select];
-					array[select] = array[i];
-					array[i] = temp;
 				}
-			}
+			} 
+			temp = array[select];
+			array[select] = array[i];
+			array[i] = temp;
 		}
 		print_array(array, size);
 	}
